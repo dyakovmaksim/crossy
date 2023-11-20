@@ -49,7 +49,6 @@ main {
   flex-direction: column;
   align-items: center;
   background: #f1f1f1;
-  width: 100%;
 }
 
 /* стили для хедера(шапки) сайта */
@@ -117,21 +116,12 @@ h1 {
 
 .container-big {
   background-color: #ffffff;
-  max-width: 1160px;
+  width: 1160px;
   height: 100%;
   padding: 48px;
-  border-radius: 24px;
+  margin: 32px;
+  border-radius: 54px;
   gap: 32px;
-}
-
-.main {
-  display: flex;
-  flex-wrap: wrap;
-  width: 1140px;
-  height: 100%;
-  border-radius: 24px;
-  margin: 32px 150px;
-  background-color: white;
 }
 
 .big-img {
@@ -166,7 +156,6 @@ h1 {
   padding-top: 24px;
   padding-bottom: 12px;
 }
-
 
 .big-left {
   width: 50%;
@@ -288,7 +277,7 @@ footer .nav-link {
   margin: 24px 0;
 }
 
-@media screen and (max-width: 420px) {  
+@media screen and (max-width: 375px) {
   .header-container, header {
     display: flex;
     flex-direction: column;
@@ -298,7 +287,7 @@ footer .nav-link {
   }
 
   .nav-link {
-      margin-top: 10px;
+    margin-top: 10px;
   }
 
   ul {
@@ -308,19 +297,19 @@ footer .nav-link {
 
   main {
     width: 100%;
-
-  }
-  
-  .main{
-    width: 380px;
-    padding: 24px;
     height: 100%;
   }
-  
+
+  .big-card {
+    padding: 32px 150px;
+  }
+
   .content {
-    justify-content: center;
+    padding: 32px 16px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 0px 32px;
+    margin: 0;
   }
 
   .footer-content {
@@ -341,68 +330,68 @@ footer .nav-link {
     border-top: 1px solid #a1a6b4;
   }
 
-  .sneakers{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .container-big{
-    max-width: 420px;
-    padding: 0;
+  .container-big {
+    max-width: 343px;
+    padding: 24px;
     border-radius: 24px;
     background-color: white;
-    
-  }
-  .big-img{
-    border-radius: 24px;
-    width: 100%;
   }
 
-  .big-description{
+  .big-img {
+    border-radius: 24px;
+    width: 100%;
+    padding-bottom: 32px;
+  }
+
+  .big-description {
     width: 100%;
     display: block;
   }
 
-  .big-left{
+  .big-left {
     width: 100%;
   }
-  
-  .big-right{
+
+  .big-right {
     width: 100%;
     margin-top: 32px;
   }
 
-  .big-title{
+  .big-title {
     font-family: "Anonymous Pro", sans-serif;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 400;
     line-height: 32px;
   }
 
-  .big-text{
+  .big-text {
     font-family: "Anonymous Pro", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
   }
 
-  .subtitle-title{
+  .subtitle-title {
     font-family: "Anonymous Pro", sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 20px;
   }
 
-  h4{
+  .sneaker:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 4px 4px 0px #00000040;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h4 {
     font-size: 24px;
   }
 
-  h3{
+  h3 {
     font-size: 16px;
   }
-  
-
-
-
 }
