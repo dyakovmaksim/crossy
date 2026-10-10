@@ -5,6 +5,7 @@ export function catalog(root,products,getFavorites){
  const form=root.querySelector('form'); if(matchMedia('(max-width:700px)').matches)root.querySelector('details').open=false;
  function render(s){const found=filterProducts(products,s);root.querySelector('#result-count').textContent=`Найдено товаров: ${found.length}`;root.querySelector('#results').innerHTML=found.length?found.map(p=>card(p,getFavorites())).join(''):empty('Ничего не найдено','Измените запрос или сбросьте фильтры.');}
  function restore(){const s=readFilters(location.search);for(const name of ['q','size','min','max','sort'])form.elements[name].value=s[name];form.querySelectorAll('[name="brand"]').forEach(i=>i.checked=s.brands.includes(i.value));form.elements.new.checked=s.newOnly;render(s);}
- form.addEventListener('submit',e=>e.preventDefault());form.addEventListener('input',()=>{const d=new FormData(form);const s={...Object.fromEntries(d),brands:d.getAll('brand'),newOnly:d.has('new')};const search=filtersToSearch(s);history.pushState(null,'',`${location.pathname}${search?'?'+search:''}`);render(s);});
- form.addEventListener('reset',()=>{history.pushState(null,'',location.pathname);queueMicrotask(restore);});window.addEventListener('popstate',restore);restore();
+ form.addEventListener('submit',e=>e.preventDefault());let timer;
+ form.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>{const d=new FormData(form);const s={...Object.fromEntries(d),brands:d.getAll('brand'),newOnly:d.has('new')};const search=filtersToSearch(s);history.pushState(null,'',`${location.pathname}${search?'?'+search:''}`);render(s);},180);});
+ form.addEventListener('reset',()=>{clearTimeout(timer);history.pushState(null,'',location.pathname);queueMicrotask(restore);});window.addEventListener('popstate',restore);restore();
 }
