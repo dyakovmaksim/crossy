@@ -1,11 +1,58 @@
-import {filterProducts,readFilters,filtersToSearch} from '../logic/filters.js';
-import {card,empty} from '../components/ui.js';
-export function catalog(root,products,getFavorites){
- root.innerHTML=`<h1>Коллекция кроссовок</h1><div class="catalog-layout"><details class="filters" open><summary>Поиск и фильтры</summary><form id="filters"><label>Поиск<input name="q" type="search" placeholder="Название или бренд"></label><fieldset><legend>Бренды</legend>${[...new Set(products.map(p=>p.brand))].map(b=>`<label class="check"><input name="brand" type="checkbox" value="${b}">${b}</label>`).join('')}</fieldset><label>Размер EU<select name="size"><option value="">Все размеры</option>${Array.from({length:10},(_,i)=>`<option>${i+36}</option>`).join('')}</select></label><fieldset><legend>Цена, ₽</legend><div class="price-fields"><label>От<input name="min" type="number" min="0" step="100" inputmode="numeric"></label><label>До<input name="max" type="number" min="0" step="100" inputmode="numeric"></label></div></fieldset><label class="check"><input type="checkbox" name="new">Только новинки</label><label>Сортировка<select name="sort"><option value="name">По названию</option><option value="price-asc">Сначала дешевле</option><option value="price-desc">Сначала дороже</option></select></label><button type="reset" class="secondary">Сбросить фильтры</button></form></details><section aria-label="Результаты поиска"><p id="result-count" role="status"></p><div id="results" class="grid"></div></section></div>`;
- const form=root.querySelector('form'); if(matchMedia('(max-width:700px)').matches)root.querySelector('details').open=false;
- function render(s){const found=filterProducts(products,s);root.querySelector('#result-count').textContent=`Найдено товаров: ${found.length}`;root.querySelector('#results').innerHTML=found.length?found.map(p=>card(p,getFavorites())).join(''):empty('Ничего не найдено','Измените запрос или сбросьте фильтры.');}
- function restore(){const s=readFilters(location.search);for(const name of ['q','size','min','max','sort'])form.elements[name].value=s[name];form.querySelectorAll('[name="brand"]').forEach(i=>i.checked=s.brands.includes(i.value));form.elements.new.checked=s.newOnly;render(s);}
- form.addEventListener('submit',e=>e.preventDefault());let timer;
- form.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>{const d=new FormData(form);const s={...Object.fromEntries(d),brands:d.getAll('brand'),newOnly:d.has('new')};const search=filtersToSearch(s);history.pushState(null,'',`${location.pathname}${search?'?'+search:''}`);render(s);},180);});
- form.addEventListener('reset',()=>{clearTimeout(timer);history.pushState(null,'',location.pathname);queueMicrotask(restore);});window.addEventListener('popstate',restore);restore();
+import {
+  filterProducts,
+  readFilters,
+  filtersToSearch,
+} from "../logic/filters.js";
+import { card, empty } from "../components/ui.js";
+export function catalog(root, products, getFavorites) {
+  root.innerHTML = `<h1>Коллекция кроссовок</h1><div class="catalog-layout"><details class="filters" open><summary>Поиск и фильтры</summary><form id="filters"><label>Поиск<input name="q" type="search" placeholder="Название или бренд"></label><fieldset><legend>Бренды</legend>${[...new Set(products.map((p) => p.brand))].map((b) => `<label class="check"><input name="brand" type="checkbox" value="${b}">${b}</label>`).join("")}</fieldset><label>Размер EU<select name="size"><option value="">Все размеры</option>${Array.from({ length: 10 }, (_, i) => `<option>${i + 36}</option>`).join("")}</select></label><fieldset><legend>Цена, ₽</legend><div class="price-fields"><label>От<input name="min" type="number" min="0" step="100" inputmode="numeric"></label><label>До<input name="max" type="number" min="0" step="100" inputmode="numeric"></label></div></fieldset><label class="check"><input type="checkbox" name="new">Только новинки</label><label>Сортировка<select name="sort"><option value="name">По названию</option><option value="price-asc">Сначала дешевле</option><option value="price-desc">Сначала дороже</option></select></label><button type="reset" class="secondary">Сбросить фильтры</button></form></details><section aria-label="Результаты поиска"><p id="result-count" role="status"></p><div id="results" class="grid"></div></section></div>`;
+  const form = root.querySelector("form");
+  if (matchMedia("(max-width:700px)").matches)
+    root.querySelector("details").open = false;
+  function render(s) {
+    const found = filterProducts(products, s);
+    root.querySelector("#result-count").textContent =
+      `Найдено товаров: ${found.length}`;
+    root.querySelector("#results").innerHTML = found.length
+      ? found.map((p) => card(p, getFavorites())).join("")
+      : empty("Ничего не найдено", "Измените запрос или сбросьте фильтры.");
+  }
+  function restore() {
+    clearTimeout(timer);
+    const s = readFilters(location.search);
+    for (const name of ["q", "size", "min", "max", "sort"])
+      form.elements[name].value = s[name];
+    form
+      .querySelectorAll('[name="brand"]')
+      .forEach((i) => (i.checked = s.brands.includes(i.value)));
+    form.elements.new.checked = s.newOnly;
+    render(s);
+  }
+  form.addEventListener("submit", (e) => e.preventDefault());
+  let timer;
+  form.addEventListener("input", () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      const d = new FormData(form);
+      const s = {
+        ...Object.fromEntries(d),
+        brands: d.getAll("brand"),
+        newOnly: d.has("new"),
+      };
+      const search = filtersToSearch(s);
+      history.pushState(
+        null,
+        "",
+        `${location.pathname}${search ? "?" + search : ""}`,
+      );
+      render(s);
+    }, 180);
+  });
+  form.addEventListener("reset", () => {
+    clearTimeout(timer);
+    history.pushState(null, "", location.pathname);
+    queueMicrotask(restore);
+  });
+  window.addEventListener("popstate", restore);
+  restore();
 }
