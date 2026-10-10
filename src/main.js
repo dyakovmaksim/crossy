@@ -1,2 +1,11 @@
 import './styles/main.scss';
-document.querySelector('#main').textContent = 'Кроссы и точка';
+import products from './data/products.json';
+import {asset} from './components/ui.js';
+import {home} from './pages/home.js';
+import {catalog} from './pages/catalog.js';
+const page=document.body.dataset.page;
+document.querySelector('#header').innerHTML=`<div class="header-inner"><a class="logo" href="index.html"><img src="${asset('images/logo.svg')}" width="215" height="64" alt="Кроссы и точка — главная"></a><nav aria-label="Основная навигация">${[['catalog','Каталог'],['favorites','Избранное'],['cart','Корзина']].map(([id,name])=>`<a href="${id}.html" ${page===id?'aria-current="page"':''}>${name}${id==='favorites'||id==='cart'?` <span id="${id}-count">0</span>`:''}</a>`).join('')}</nav></div>`;
+document.querySelector('#footer').innerHTML=`<div><a href="index.html"><img src="${asset('images/logo_footer.svg')}" width="300" height="64" alt="Кроссы и точка"></a><p>Crossy — учебный проект. Товары, наличие и цены демонстрационные. Заказы не отправляются в магазин.</p></div>`;
+const root=document.querySelector('#main');
+if(page==='index')home(root,products,[]);
+if(page==='catalog')catalog(root,products,()=>[]);

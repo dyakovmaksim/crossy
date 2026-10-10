@@ -1,0 +1,272 @@
+[
+  {
+    "id": "1",
+    "name": "New Balance C-ms574",
+    "brand": "New Balance",
+    "category": "Повседневная обувь",
+    "price": 10000,
+    "images": [
+      "images/6.webp",
+      "images/6-detail.webp"
+    ],
+    "sizes": [
+      36,
+      37,
+      38,
+      40,
+      41,
+      42,
+      44,
+      45
+    ],
+    "description": "New Balance C-ms574: выразительный силуэт для повседневных сочетаний. Демонстрационная модель учебного каталога. Характеристики, наличие размеров и цена приведены для примера.",
+    "isNew": false
+  },
+  {
+    "id": "2",
+    "name": "Nike Dunk Low SP",
+    "brand": "Nike",
+    "category": "Повседневная обувь",
+    "price": 11100,
+    "images": [
+      "images/7.webp",
+      "images/7-detail.webp"
+    ],
+    "sizes": [
+      36,
+      37,
+      39,
+      40,
+      41,
+      43,
+      44,
+      45
+    ],
+    "description": "Nike Dunk Low SP: выразительный силуэт для повседневных сочетаний. Демонстрационная модель учебного каталога. Характеристики, наличие размеров и цена приведены для примера.",
+    "isNew": false
+  },
+  {
+    "id": "3",
+    "name": "Converse Chuck Taylor All Star 70 Hi",
+    "brand": "Converse",
+    "category": "Повседневная обувь",
+    "price": 12200,
+    "images": [
+      "images/4.webp",
+      "images/4-detail.webp"
+    ],
+    "sizes": [
+      36,
+      38,
+      39,
+      40,
+      42,
+      43,
+      44
+    ],
+    "description": "Converse Chuck Taylor All Star 70 Hi: выразительный силуэт для повседневных сочетаний. Демонстрационная модель учебного каталога. Характеристики, наличие размеров и цена приведены для примера.",
+    "isNew": true
+  },
+  {
+    "id": "4",
+    "name": "adidas Yeezy Foam RNNR",
+    "brand": "adidas",
+    "category": "Повседневная обувь",
+    "price": 13300,
+    "images": [
+      "images/9.webp",
+      "images/9-detail.webp"
+    ],
+    "sizes": [
+      37,
+      38,
+      39,
+      41,
+      42,
+      43,
+      45
+    ],
+    "description": "adidas Yeezy Foam RNNR: выразительный силуэт для повседневных сочетаний. Демонстрационная модель учебного каталога. Характеристики, наличие размеров и цена приведены для примера.",
+    "isNew": false
+  },
+  {
+    "id": "5",
+    "name": "Nike Air Max Plus",
+    "brand": "Nike",
+    "category": "Повседневная обувь",
+    "price": 14400,
+    "images": [
+      "images/1.webp",
+      "images/1-detail.webp"
+    ],
+    "sizes": [
+      36,
+      37,
+      38,
+      40,
+      41,
+      42,
+      44,
+      45
+    ],
+    "description": "Nike Air Max Plus: выразительный силуэт для повседневных сочетаний. Демонстрационная модель учебного каталога. Характеристики, наличие размеров и цена приведены для примера.",
+    "isNew": false
+  },
+  {
+    "id": "6",
+    "name": "Jordan 1 Retro High OG SP",
+    "brand": "Jordan",
+    "category": "Повседневная обувь",
+    "price": 15500,
+    "images": [
+      "images/2.webp",
+      "images/2-detail.webp"
+    ],
+    "sizes": [
+      36,
+      37,
+      39,
+      40,
+      41,
+      43,
+      44,
+      45
+    ],
+    "description": "Jordan 1 Retro High OG SP: выразительный силуэт для повседневных сочетаний. Демонстрационная модель учебного каталога. Характеристики, наличие размеров и цена приведены для примера.",
+    "isNew": true
+  },
+  {
+    "id": "7",
+    "name": "adidas Campus 00s",
+    "brand": "adidas",
+    "category": "Повседневная обувь",
+    "price": 16600,
+    "images": [
+      "images/3.webp",
+      "images/3-detail.webp"
+    ],
+    "sizes": [
+      36,
+      38,
+      39,
+      40,
+      42,
+      43,
+      44
+    ],
+    "description": "adidas Campus 00s: выразительный силуэт для повседневных сочетаний. Демонстрационная модель учебного каталога. Характеристики, наличие размеров и цена приведены для примера.",
+    "isNew": false
+  },
+  {
+    "id": "8",
+    "name": "UGG Classic Ultra Mini Boot",
+    "brand": "UGG",
+    "category": "Утеплённая обувь",
+    "price": 17700,
+    "images": [
+      "images/5.webp",
+      "images/5-detail.webp"
+    ],
+    "sizes": [
+      37,
+      38,
+      39,
+      41,
+      42,
+      43,
+      45
+    ],
+    "description": "UGG Classic Ultra Mini Boot: выразительный силуэт для повседневных сочетаний. Демонстрационная модель учебного каталога. Характеристики, наличие размеров и цена приведены для примера.",
+    "isNew": false
+  },
+  {
+    "id": "9",
+    "name": "Jordan 1 Retro Low Golf",
+    "brand": "Jordan",
+    "category": "Повседневная обувь",
+    "price": 18800,
+    "images": [
+      "images/8.webp",
+      "images/8-detail.webp"
+    ],
+    "sizes": [
+      36,
+      37,
+      38,
+      40,
+      41,
+      42,
+      44,
+      45
+    ],
+    "description": "Jordan 1 Retro Low Golf: выразительный силуэт для повседневных сочетаний. Демонстрационная модель учебного каталога. Характеристики, наличие размеров и цена приведены для примера.",
+    "isNew": true
+  },
+  {
+    "id": "10",
+    "name": "Nike Dunk Low — демо выпуск",
+    "brand": "Nike",
+    "category": "Повседневная обувь",
+    "price": 19900,
+    "images": [
+      "images/7.webp",
+      "images/7-detail.webp"
+    ],
+    "sizes": [
+      36,
+      37,
+      39,
+      40,
+      41,
+      43,
+      44,
+      45
+    ],
+    "description": "Nike Dunk Low — демо выпуск: выразительный силуэт для повседневных сочетаний. Демонстрационная модель учебного каталога. Характеристики, наличие размеров и цена приведены для примера.",
+    "isNew": false
+  },
+  {
+    "id": "11",
+    "name": "adidas Campus — демо выпуск",
+    "brand": "adidas",
+    "category": "Повседневная обувь",
+    "price": 21000,
+    "images": [
+      "images/3.webp",
+      "images/3-detail.webp"
+    ],
+    "sizes": [
+      36,
+      38,
+      39,
+      40,
+      42,
+      43,
+      44
+    ],
+    "description": "adidas Campus — демо выпуск: выразительный силуэт для повседневных сочетаний. Демонстрационная модель учебного каталога. Характеристики, наличие размеров и цена приведены для примера.",
+    "isNew": false
+  },
+  {
+    "id": "12",
+    "name": "New Balance 574 — демо выпуск",
+    "brand": "New Balance",
+    "category": "Повседневная обувь",
+    "price": 22100,
+    "images": [
+      "images/6.webp",
+      "images/6-detail.webp"
+    ],
+    "sizes": [
+      37,
+      38,
+      39,
+      41,
+      42,
+      43,
+      45
+    ],
+    "description": "New Balance 574 — демо выпуск: выразительный силуэт для повседневных сочетаний. Демонстрационная модель учебного каталога. Характеристики, наличие размеров и цена приведены для примера.",
+    "isNew": true
+  }
+]
